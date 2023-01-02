@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>my-shopgoodwill</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="container">
+      <h1>my-shopgoodwill</h1>
+      <div id="grid">
+        {% for listing in listings %}
+          <div class="home">
+            <a href="https://shopgoodwill.com/item/{{ listing.item_id }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ listing.image_url }}"></img>
+              <p>{{ listing.title }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
