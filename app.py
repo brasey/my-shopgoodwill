@@ -25,7 +25,6 @@ def get_listings():
     day = now.strftime("%d")
     end_time = datetime.strptime(f"{year}-{month}-{day} 23:59:59", "%Y-%m-%d %H:%M:%S")
     eastern = timezone('US/Eastern')
-    now = eastern.localize(now)
     end_time = eastern.localize(end_time)
 
     firebase_docs = db.collection('listings').where(
