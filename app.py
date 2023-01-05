@@ -3,6 +3,7 @@
 
 from datetime import datetime
 import os
+from pytz import timezone
 from flask import Flask, render_template, url_for
 from firebase_admin import firestore
 from db import db
@@ -23,6 +24,9 @@ def get_listings():
     month = now.strftime("%m")
     day = now.strftime("%d")
     end_time = datetime.strptime(f"{year}-{month}-{day} 23:59:59", "%Y-%m-%d %H:%M:%S")
+    eastern = timezone('US/Eastern')
+    now = eastern.localize(now)
+    end_time = eastern.localize(end_time)
 
     firebase_docs = db.collection('listings').where(
             'end_time', '>=', now
