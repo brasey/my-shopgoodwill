@@ -25,23 +25,32 @@ img {
   margin: 1rem auto;
   padding: 1rem;
 }
-div.home {
-  padding: 5px;
-  background-color: #B6C6DB;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
 
 #grid {
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
-  grid-template-rows: repeat(auto-fit, minmax(425px,425px));
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
   grid-gap: 1rem;
 }
 
-#grid > div {
+div.listing {
+  padding: 1rem;
+  background-color: #B6C6DB;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
   font-size: 1rem;
   padding: 1rem;
   text-align: center;
+}
+
+div.detail {
+  display: grid;
+  grid-template-columns: repeat( 2, minmax(100px, 1fr) );
+  grid-gap: 0px;
+}
+
+div.detail_item {
+  padding: 0px;
+  font-size: .8rem;
 }
