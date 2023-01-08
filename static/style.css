@@ -2,13 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
-  font-size: 16px;
+  font-size: 1.8vmin;
   color: #444;
   background-color: #D3DDE9;
 }
 
 a {
-  font-size: 16px;
+  font-size: 1.8vmin;
   color: #0A428E;
 }
 
@@ -22,25 +22,24 @@ img {
 }
 
 .container {
-  margin: 1rem auto;
-  padding: 1rem;
+  margin: 1vmin auto;
+  padding: 1vmin;
 }
 
 #grid {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(min(250px, 100%), 1fr));
   grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1.2vmin;
 }
 
 div.listing {
-  padding: 1rem;
+  padding: 1.2vmin;
   background-color: #B6C6DB;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-  font-size: 1rem;
-  padding: 1rem;
+  -webkit-border-radius: 1vmin;
+     -moz-border-radius: 1vmin;
+          border-radius: 1vmin;
+  font-size: 1.8vmin;
   text-align: center;
 }
 
@@ -52,5 +51,5 @@ div.detail {
 
 div.detail_item {
   padding: 0px;
-  font-size: .8rem;
+  font-size: 1.6vmin;
 }
