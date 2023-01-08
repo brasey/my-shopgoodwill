@@ -11,11 +11,29 @@
       <h1>my-shopgoodwill</h1>
       <div id="grid">
         {% for listing in listings %}
-          <div class="home">
+          <div class="listing">
             <a href="https://shopgoodwill.com/item/{{ listing.item_id }}" target="_blank" rel="noopener noreferrer">
               <img src="{{ listing.image_url }}"></img>
               <p>{{ listing.title }}</p>
             </a>
+            <div class="detail">
+              <div class="detail_item">
+                {% if listing.price is defined %}
+                  {% set price = listing.price %}
+                {% else %}
+                  {% set price = 0 %}
+                {% endif %}
+                {% if listing.bids is defined %}
+                  {% set bids = listing.bids %}
+                {% else %}
+                  {% set bids = 0 %}
+                {% endif %}
+                <p><b>${{ "%.2f"|format(price) }}</b></p>
+              </div>
+              <div class="detail_item">
+                <p>{{ bids }} bids</p>
+              </div>
+            </div>
           </div>
         {% endfor %}
       </div>
