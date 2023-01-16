@@ -16,7 +16,7 @@
         {% for listing in listings %}
           <div class="listing">
             <a href="https://shopgoodwill.com/item/{{ listing.item_id }}" target="_blank" rel="noopener noreferrer">
-              <img src="{{ listing.image_url }}"></img>
+              <img src="{{ listing.image_url }}" alt="Image of listing ID {{ listing.item_id }}">
               <p>{{ listing.title }}</p>
             </a>
             <div class="detail">
