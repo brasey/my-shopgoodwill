@@ -2,13 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
-  font-size: 1.8vmin;
+  font-size: .9rem;
   color: #444;
   background-color: #D3DDE9;
 }
 
 a {
-  font-size: 1.8vmin;
+  font-size: 1em;
   color: #0A428E;
 }
 
@@ -22,15 +22,22 @@ img {
 }
 
 .container {
-  margin: 1vmin auto;
-  padding: 1vmin;
+  width: 100%;
+}
+
+.title {
+  margin: 1vw;
 }
 
 #grid {
+  margin: 1vw;
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(min(250px, 100%), 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
-  grid-gap: 1.2vmin;
+  --min: 16em;
+  --gap: .7em;
+
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(95%, var(--min)), 1fr));
 }
 
 div.listing {
@@ -39,7 +46,7 @@ div.listing {
   -webkit-border-radius: 1vmin;
      -moz-border-radius: 1vmin;
           border-radius: 1vmin;
-  font-size: 1.8vmin;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -51,5 +58,5 @@ div.detail {
 
 div.detail_item {
   padding: 0px;
-  font-size: 1.6vmin;
+  font-size: .8em;
 }
